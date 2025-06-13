@@ -14,6 +14,9 @@ app.use(
 );
 connectDB();
 
+app.use('/',(req,res) =>{
+	res.send("Welcome to the server");
+})
 
 
 app.use("/api/v1/reach",contactUSRoute);
