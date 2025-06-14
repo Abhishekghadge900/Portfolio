@@ -4,10 +4,7 @@
   "description": "Portfolio Backend",
   "main": "server.js",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js",
-    "deploy": "serverless deploy",
-    "offline": "serverless offline",
+    "start": "node server.js",
     "vercel-build": "echo hello"
   },
   "dependencies": {
@@ -18,8 +15,6 @@
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22",
-    "serverless": "^3.30.1",
-    "serverless-offline": "^12.0.4"
+    "nodemon": "^2.0.22"
   }
 }
