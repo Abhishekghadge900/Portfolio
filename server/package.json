@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Portfolio Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "vercel-build": "echo hello"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.5.0",
+    "mongoose": "^8.16.0",
+    "nodemailer": "^6.9.1",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
