@@ -20,6 +20,12 @@ const limiter = rateLimit({
     max: 5 // limit each IP to 5 requests per windowMs
 });
 
+app.use("/",(req,res) => {
+	res.status(200).json({
+		message: "Welcome to Reach API",
+		status: "success"
+	});
+})
 // Apply to contact route
 app.use("/api/v1/reach/contact", limiter);
 
