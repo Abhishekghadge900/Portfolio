@@ -1,6 +1,6 @@
 function Footer() {
-    const currentYear = new Date().getFullYear();
-    
+    const currentYear = 2025;
+
     return (
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6">
