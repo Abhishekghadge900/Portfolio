@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://vercel.com/abhishekghadge900-gmailcoms-projects/portfolio-backend";
+const BASE_URL = "https://portfolio-backend-lemon-zeta.vercel.app/";
 
 
 export const contactusEndpoint = {
