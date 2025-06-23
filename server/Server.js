@@ -20,16 +20,19 @@ const limiter = rateLimit({
     max: 5 // limit each IP to 5 requests per windowMs
 });
 
-app.use("/",(req,res) => {
-	res.status(200).json({
-		message: "Welcome to Reach API",
-		status: "success"
-	});
-})
 // Apply to contact route
 app.use("/api/v1/reach/contact", limiter);
 
-app.use("/api/v1/reach",contactUSRoute);
+// Contact API route
+app.use("/api/v1/reach", contactUSRoute);
+
+// Catch-all route LAST
+app.use("/", (req, res) => {
+    res.status(200).json({
+        message: "Welcome to Reach API",
+        status: "success"
+    });
+});
 
 app.listen(process.env.PORT || 3000, () => {
     //console.log(`Server is running on port ${process.env.PORT || 3000}`);
