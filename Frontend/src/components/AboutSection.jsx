@@ -1,47 +1,49 @@
-import { useState } from "react";
+import { gradientButton, sectionHeading, sectionUnderline } from '../ui';
 
 function AboutSection() {
-  const [blog, setblog] = useState(false);
-
-  function handleblog() {
-    setblog(true);
-    window.open('https://medium.com/@abhishekghadge900', '_blank');
-  }
-
   return (
     <div className="container mx-auto px-6">
-      <h2 className="text-4xl font-bold text-center mb-16 relative text-white">
-        About Me
-        <div className="absolute w-20 h-1 bg-blue-600 bottom-0 left-1/2 transform -translate-x-1/2 -mb-4"></div>
-      </h2>
+      <h2 className={sectionHeading}>About Me</h2>
+      <div className={sectionUnderline} aria-hidden="true" />
 
       <div className="flex flex-col md:flex-row gap-12 items-center">
-        {/* Image Side */}
+        {/* Image */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
-            src="/image.png"
-            alt="profile"
+            src="/profile.webp"
+            alt="Illustration: a laptop plus coffee equals code"
+            width={640}
+            height={640}
+            loading="lazy"
+            decoding="async"
             className="w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-3xl"
           />
         </div>
-        {/* Text Side */}
+
+        {/* Text */}
         <div className="md:w-1/2 w-full">
-          <p className="text-lg text-white mb-6">
-            Hello! I'm a passionate and detail-oriented web developer with a strong focus on creating seamless, user-friendly, and visually engaging applications. My core expertise lies in JavaScript, modern frontend/backend technologies, and building scalable web solutions.
-            Whether it's building robust backends or designing intuitive UIs, I strive to deliver quality and performance in every project I take on.
+          <p className="text-lg text-gray-200 mb-6">
+            Hello! I&apos;m a passionate and detail-oriented web developer with a strong focus on
+            creating seamless, user-friendly, and visually engaging applications. My core expertise
+            lies in JavaScript, modern frontend and backend technologies, and building scalable web
+            solutions. Whether it&apos;s building robust backends or designing intuitive UIs, I strive
+            to deliver quality and performance in every project I take on.
           </p>
-          <p className="text-lg text-white mb-8">
-            When I'm not immersed in code, you'll likely find me exploring new tech trends or enjoying the outdoors.
+          <p className="text-lg text-gray-200 mb-8">
+            When I&apos;m not immersed in code, you&apos;ll likely find me exploring new tech trends or
+            enjoying the outdoors.
           </p>
-          <div className="mb-8 space-y-3 text-lg text-white">
-            <span className="font-semibold w-24">Explore articles, project case studies, and insights from my journey as a developer.</span>
-          </div>
-          <button
-            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 hover:cursor-pointer"
-            onClick={handleblog}
+          <p className="mb-6 text-lg font-semibold text-white">
+            Explore articles, project case studies, and insights from my journey as a developer.
+          </p>
+          <a
+            href="https://medium.com/@abhishekghadge900"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={gradientButton}
           >
-            BLOGS
-          </button>
+            Read my blog
+          </a>
         </div>
       </div>
     </div>

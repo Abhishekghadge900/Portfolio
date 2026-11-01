@@ -3,6 +3,8 @@
 */
 
 import { useSprings, animated } from "@react-spring/web";
+
+const AnimatedSpan = animated.span;
 import { useEffect, useRef, useState } from "react";
 
 const SplitText = ({
@@ -77,14 +79,14 @@ const SplitText = ({
               letterIndex;
 
             return (
-              <animated.span
+              <AnimatedSpan
                 key={index}
                 style={springs[index]}
                 // Apply gradient classes here!
                 className={`inline-block transform transition-opacity will-change-transform ${className}`}
               >
                 {letter}
-              </animated.span>
+              </AnimatedSpan>
             );
           })}
           <span style={{ display: "inline-block", width: "0.3em" }}>

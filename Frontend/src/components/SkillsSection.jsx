@@ -1,64 +1,65 @@
-import StackIcon from "tech-stack-icons";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiTailwindcss,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiPython,
+  SiCplusplus,
+} from 'react-icons/si';
+import { sectionHeading, sectionUnderline } from '../ui';
+
+// react-icons is tree-shaken per icon, so only these 14 ship in the bundle.
+// Simple Icons are monochrome; colours are the official brand colours, with
+// white for brands whose logo is black.
+const SKILLS = [
+  { Icon: SiHtml5, label: 'HTML5', color: '#E34F26' },
+  { Icon: SiCss3, label: 'CSS3', color: '#1572B6' },
+  { Icon: SiJavascript, label: 'JavaScript', color: '#F7DF1E' },
+  { Icon: SiReact, label: 'React', color: '#61DAFB' },
+  { Icon: SiNodedotjs, label: 'Node.js', color: '#5FA04E' },
+  { Icon: SiExpress, label: 'Express.js', color: '#FFFFFF' },
+  { Icon: SiMongodb, label: 'MongoDB', color: '#47A248' },
+  { Icon: SiMysql, label: 'MySQL', color: '#4479A1' },
+  { Icon: SiTailwindcss, label: 'Tailwind CSS', color: '#06B6D4' },
+  { Icon: SiGit, label: 'Git', color: '#F05032' },
+  { Icon: SiGithub, label: 'GitHub', color: '#FFFFFF' },
+  { Icon: SiPostman, label: 'Postman', color: '#FF6C37' },
+  { Icon: SiPython, label: 'Python', color: '#3776AB' },
+  { Icon: SiCplusplus, label: 'C++', color: '#00599C' },
+];
 
 function SkillsSection() {
-  const items = [
-    { icon: <StackIcon name="html5" />, color: 'orange', label: 'HTML5' },
-    { icon: <StackIcon name="css3" />, color: 'blue', label: 'CSS3' },
-    { icon: <StackIcon name="js" />, color: 'yellow', label: 'JavaScript' },
-    { icon: <StackIcon name="react" />, color: 'cyan', label: 'React' },
-    { icon: <StackIcon name="nodejs" />, color: 'green', label: 'Node.js' },
-    { icon: <StackIcon name="mongodb" />, color: 'green', label: 'MongoDB' },
-    { icon: <StackIcon name="git" />, color: 'red', label: 'Git' },
-    { icon: (
-      <span className="bg-white">
-        <StackIcon name="github" />
-      </span>
-    ), color: 'black', label: 'GitHub' },
-    { icon: <StackIcon name="mysql" />, color: 'black', label: 'Mysql' },
-    { icon: <StackIcon name="postman" />, color: 'black', label: 'postman' },
-    {
-      icon: (
-        <span className="flex items-center justify-center bg-white rounded-full p-3">
-          <StackIcon name="expressjs" />
-        </span>
-      ),
-      color: 'black',
-      label: 'Express.js'
-    },
-    {icon: <StackIcon name="tailwindcss" />, label: 'Tailwind CSS', color: 'skyblue' },
-    {icon: <StackIcon name="python" />, label: 'python', color: 'purple' },
-    {icon: <StackIcon name="c++" />, label: 'c++', color: 'black' },
-  ];
-
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black px-4 sm:px-6 py-16">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 relative text-white">
-        My Skills
-        <div className="absolute w-20 h-1 bg-blue-600 bottom-0 left-1/2 transform -translate-x-1/2 -mb-4"></div>
-      </h2>
+    <div className="w-full flex flex-col items-center px-4 sm:px-6">
+      <h2 className={sectionHeading}>My Skills</h2>
+      <div className={sectionUnderline} aria-hidden="true" />
 
       <div className="w-full max-w-5xl">
-        <p className="text-base sm:text-lg text-white text-center mb-12">
-          I've worked with a variety of technologies and frameworks in web development.
+        <p className="text-base sm:text-lg text-gray-200 text-center mb-12">
+          I&apos;ve worked with a variety of technologies and frameworks in web development.
           Here are some of my key technical skills:
         </p>
 
-        <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8"
-          style={{ minHeight: '400px' }}
-        >
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center"
-            >
-              <div className="text-4xl sm:text-5xl md:text-6xl mb-2 flex items-center justify-center" style={{ color: item.color }}>
-                {item.icon}
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 list-none p-0">
+          {SKILLS.map(({ Icon, label, color }) => (
+            <li key={label} className="flex flex-col items-center">
+              <div className="mb-3 flex items-center justify-center text-5xl sm:text-6xl" style={{ color }}>
+                <Icon aria-hidden="true" title={label} />
               </div>
-              <span className="text-white text-sm sm:text-base md:text-lg font-semibold text-center">{item.label}</span>
-            </div>
+              <span className="text-white text-sm sm:text-base md:text-lg font-semibold text-center">
+                {label}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

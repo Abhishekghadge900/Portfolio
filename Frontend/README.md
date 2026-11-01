@@ -1,12 +1,30 @@
-# React + Vite
+# Portfolio – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Abhishek Ghadge, built with React 18, Vite and Tailwind CSS v4.
+Live at https://abhishek-ghadge.vercel.app.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+cp .env.example .env   # set VITE_API_BASE_URL if you run the backend locally
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Command           | Purpose                         |
+| ----------------- | ------------------------------- |
+| `npm run dev`     | Start the Vite dev server       |
+| `npm run build`   | Production build into `dist/`   |
+| `npm run preview` | Serve the production build      |
+| `npm run lint`    | Run ESLint                      |
+
+## Structure
+
+- `src/components/` – page sections (Navbar, Hero, About, Skills, Projects, Contact, Footer)
+- `src/ReactBits/` – animated components installed from https://reactbits.dev
+- `src/api.js` – backend endpoint configuration
+- `src/ui.js` – shared Tailwind class strings
+
+The contact form posts to the Express backend in `../server`.
