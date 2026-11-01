@@ -1,5 +1,9 @@
 import SplitText from '../ReactBits/TextAnimations/SplitText/SplitText';
 import Threads from '../ReactBits/Backgrounds/Threads/Threads';
+import { gradientButton, outlineButton } from '../ui';
+import { RESUME_PATH, RESUME_FILENAME } from '../data/site';
+
+const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 function HeroSection() {
   return (
@@ -27,6 +31,22 @@ function HeroSection() {
         <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-xl mx-auto">
           Crafting functional and aesthetic web experiences
         </p>
+
+        {/* Calls to action */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button type="button" onClick={() => scrollTo('projects')} className={gradientButton}>
+            View Projects
+          </button>
+          <a href={RESUME_PATH} download={RESUME_FILENAME} className={outlineButton}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+            </svg>
+            Download Resume
+          </a>
+          <button type="button" onClick={() => scrollTo('contact')} className="text-sm font-medium text-gray-300 hover:text-blue-400 transition cursor-pointer">
+            Contact me
+          </button>
+        </div>
       </div>
     </div>
   );

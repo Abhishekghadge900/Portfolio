@@ -1,6 +1,9 @@
 // Shared class strings so the same button style is not copy-pasted around.
 export const gradientButton =
-  "inline-flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-300/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition";
+  "inline-flex items-center justify-center gap-2 text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-300/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition";
+
+export const outlineButton =
+  "inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-500/40 cursor-pointer transition";
 
 export const sectionHeading = "text-3xl sm:text-4xl font-bold text-center text-white";
 

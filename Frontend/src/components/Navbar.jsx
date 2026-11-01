@@ -1,4 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { RESUME_PATH, RESUME_FILENAME } from '../data/site';
+
+const resumeLinkClass =
+  'inline-flex items-center rounded-lg border border-blue-400/60 px-3 py-1.5 text-sm font-medium text-blue-400 hover:bg-blue-400/10 transition';
 
 function Navbar({ items }) {
   const [activeSection, setActiveSection] = useState(items[0]?.id ?? '');
@@ -70,7 +74,7 @@ function Navbar({ items }) {
           </button>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {items.map((item) => (
               <button
                 key={item.id}
@@ -82,6 +86,9 @@ function Navbar({ items }) {
                 {item.label}
               </button>
             ))}
+            <a href={RESUME_PATH} download={RESUME_FILENAME} className={resumeLinkClass}>
+              Resume
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -120,6 +127,14 @@ function Navbar({ items }) {
                   {item.label}
                 </button>
               ))}
+              <a
+                href={RESUME_PATH}
+                download={RESUME_FILENAME}
+                className={`${resumeLinkClass} self-start mt-2`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Download Resume
+              </a>
             </div>
           </div>
         )}

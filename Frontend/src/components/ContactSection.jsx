@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { apiConnector } from '../apiConnector';
 import { contactusEndpoint } from '../api';
 import { gradientButton, sectionHeading, sectionUnderline } from '../ui';
-
-const CONTACT_EMAIL = 'a3148700@gmail.com';
+import { CONTACT_EMAIL, LOCATION, SOCIALS } from '../data/site';
 
 const inputClass = (hasError) =>
   `w-full px-4 py-3 rounded-lg bg-neutral-900 text-white placeholder-gray-500 border focus:outline-none focus:ring-2 ${
@@ -61,28 +60,23 @@ function ContactSection() {
 
               <div>
                 <h3 className="text-xl font-bold text-blue-400 mb-2">Location</h3>
-                <p className="text-white">Pune, Maharashtra, India</p>
+                <p className="text-white">{LOCATION}</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-blue-400 mb-2">Social</h3>
                 <div className="flex gap-4">
-                  <a
-                    href="https://github.com/Abhishekghadge900"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-blue-400 transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/abhishek-ghadge-3857032a0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-blue-400 transition-colors"
-                  >
-                    LinkedIn
-                  </a>
+                  {SOCIALS.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-blue-400 transition-colors"
+                    >
+                      {social.label}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
